@@ -1,4 +1,5 @@
-安装npm
+yum install nodejs  
+（?centos的一些版本没有源
 yum install epel-release 
 ls -lah /etc/yum.repos.d/
 (？rpm -e epel-release
@@ -6,4 +7,6 @@ ls -lah /etc/yum.repos.d/
 需要rpm -e epel-release
 再yum install epel-release
 ）
+yum install nodejs 
 yum install npm --enablerepo=epel
+）
