@@ -5,7 +5,7 @@ https://golang.org/doc/install?download=go1.5.3.linux-amd64.tar.gz   有安装�
 安装步骤：
 wget --no-check-certificate  https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.5.3.linux-amd64.tar.gz
-设置PATH(GOROOT)
+设置PATH
 //VIM START 
 vim /etc/profile  写入
 export PATH=$PATH:/usr/local/go/bin
