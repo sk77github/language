@@ -8,8 +8,6 @@ tar -C /usr/local -xzf go1.5.3.linux-amd64.tar.gz
 //VIM START 
 vim /etc/profile  写入
 export PATH=$PATH:/usr/local/go/bin
-设定GOPATH环境变量
-export GOPATH=$HOME/gowork
 //VIM END
 
 test for install
