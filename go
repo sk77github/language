@@ -36,6 +36,8 @@ go install hello (类编译的那么一个过程，会在workspace的bin目录�
 （注意PATH  GOPATH GOROOT 这三者的概念 以及go的workspace的概念）
 
 
+显示GO环境
+go env
 
 
 
