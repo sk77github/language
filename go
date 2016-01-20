@@ -45,5 +45,13 @@ go env
 
 
 
+Uninstalling Go
+
+To remove an existing Go installation from your system delete the go directory. This is usually /usr/local/go under Linux,
+You should also remove the Go bin directory from your PATH environment variable. 
+Under Linux and FreeBSD you should edit /etc/profile or $HOME/.profile or $HOME/.bashrc
+
+
+
 defer语句保证了在该函数被执行结束之前互斥锁mutex一定会被解锁。
 这省去了我们在所有return语句之前以及异常发生之时重复的附加解锁操作的工作。
