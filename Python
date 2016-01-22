@@ -14,6 +14,8 @@ https://packaging.python.org/en/latest/install_requirements_linux/#installing-pi
 
 
 pip:
+pip has a number of subcommands: “search”, “install”, “uninstall”, “freeze”, "list",etc
+
 To use a package from this index either "pip install package" (get pip)
 or download, unpack and "python setup.py install" it.
 To install the latest version of “SomeProject”:
