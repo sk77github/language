@@ -1,3 +1,8 @@
+pip:
+To use a package from this index either "pip install package" (get pip)
+or download, unpack and "python setup.py install" it.
+
+
 Python包列表：
 https://pypi.python.org/pypi?%3Aaction=index
 
