@@ -1,3 +1,53 @@
+Install Python 3.x in CentOS / RedHat 6.x from sources
+http://www.sromero.org/wiki/linux/aplicaciones/python/python34_centos6
+
+
+CentOS and RedHat 6.x ship with Python 2, so you cannot/shouldn't install Python 3 
+at the system level (with or without the package manager). But you can setup Python 3.x (3.4.3 in our example below)
+in a separate "virtualenv" environment, not affecting the system packages and allowing you to develop Python 3.x programs.
+
+You may already have Python installed on your server, you can verify using:
+# which python 
+/usr/bin/python 
+# python --version 
+Python 2.6.6
+For this install we want to leave existing Python packages and executables in place. 
+
+As we're going to compile python3, we need to install the required development packages:
+# yum groupinstall "Development tools"
+# yum install zlib-devel bzip2-devel openssl-devel ncurses-devel zx-devel \
+      sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel
+      
+Download Python 3.4 sources and compile / install them :
+# cd /usr/local/src
+# wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz --no-check-certificate
+# tar xf Python-3.4.3.tar.xz
+# cd Python-3.4.3
+# ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+# make && sudo make altinstall
+(
+if you don't want to overwrite the python executable (safer, at least on some distros yum needs python to be 2.x, such as for RHEL6)
+- you can install python3.* as a concurrent instance to the system default with an altinstall:
+)
+# /usr/local/bin/python3.4 --version
+
+Finally, create a link to Python 3 executable for easy usage:
+# ln -s /usr/local/bin/python3 /usr/bin/python3
+And check:
+# python3 --version 
+Python 3.3.2
+
+Now download and install Setuptools + pip:
+# cd /usr/local/src
+# wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+# python3 ez_setup.py
+# /usr/local/bin/easy_install-3.4 pip
+
+
+
+
+
+
 ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel  （https://packaging.python.org/en/latest/projects）
 python-devel
 
