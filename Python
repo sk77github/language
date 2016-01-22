@@ -1,5 +1,7 @@
 ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel（https://packaging.python.org/en/latest/projects）
 
+Python模块常用的几种安装方式（http://blog.163.com/yang_jianli/blog/static/161990006201162152724339/）
+
 ez_setup.py
 The recommended way to bootstrap setuptools on any system is to download ez_setup.py and run it using the target Python environment
 Most Linux distributions come with wget.
@@ -27,6 +29,20 @@ and introducing the idea of Requirements Files, which gave users the power to ea
 
 操作系统源安装：pip setuptools wheel
 https://packaging.python.org/en/latest/install_requirements_linux/#installing-pip-setuptools-wheel-with-linux-package-managers
+CentOS and RHEL don’t offer pip or wheel in their core repositories, although setuptools is installed by default.
+To install pip and wheel for the system Python, there are two options:
+
+Enable the EPEL repository using these instructions. On EPEL 6 and EPEL7, you can install pip like so:
+sudo yum install python-pip
+On EPEL 7 (but not EPEL 6), you can install wheel like so:
+sudo yum install python-wheel
+Since EPEL only offers extra, non-conflicting packages, EPEL does not offer setuptools, since it’s in the core repository.
+
+Enable the PyPA Copr Repo using these instructions [1]. You can install pip and wheel like so:
+sudo yum install python-pip python-wheel
+To additionally upgrade setuptools, run:
+sudo yum upgrade python-setuptools
+
 
 
 pip:
