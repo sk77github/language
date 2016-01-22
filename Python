@@ -1,6 +1,44 @@
+ez_setup.py    python-setuptools  easy_install   pip  egg文件 wheel（https://packaging.python.org/en/latest/projects）
+
+easy_install was released in 2004, as part of setuptools. 
+It was notable at the time for installing packages from PyPI using requirement specifiers, and automatically installing dependencies.
+
+pip came later in 2008, as alternative to easy_install, although still largely built on top of setuptools components. 
+It was notable at the time for not installing packages as Eggs or from Eggs (but rather simply as ‘flat’ packages from sdists), 
+and introducing the idea of Requirements Files, which gave users the power to easily replicate environments.
+
+
+
+操作系统源安装：pip setuptools wheel
+https://packaging.python.org/en/latest/install_requirements_linux/#installing-pip-setuptools-wheel-with-linux-package-managers
+
+
 pip:
 To use a package from this index either "pip install package" (get pip)
 or download, unpack and "python setup.py install" it.
+To install the latest version of “SomeProject”:
+pip install 'SomeProject'
+To install a specific version:
+pip install 'SomeProject==1.4'
+To install greater than or equal to one version and less than another:
+pip install 'SomeProject>=1,<2'
+To install a version that’s “compatible” with a certain version: [4]
+pip install 'SomeProject~=1.4.2'
+In this case, this means to install any version “==1.4.*” version that’s also “>=1.4.2”.
+（https://packaging.python.org/en/latest/projects）
+
+Installing with get-pip.py
+To install pip, securely download get-pip.py（https://bootstrap.pypa.io/get-pip.py）
+Then run the following:
+python get-pip.py
+
+get-pip.py will also intall setuptools （Beginning with pip v1.5.1, get-pip.py stopped requiring setuptools to be installed first.
+） and wheel, if they're not already. 
+setuptools is required to install source distributions.
+Both are required to be able to build a Wheel Cache (which improves installation speed),
+although neither are required to install pre-built wheels.
+//end pip
+
 
 
 Python包列表：
