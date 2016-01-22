@@ -1,4 +1,5 @@
-ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel（https://packaging.python.org/en/latest/projects）
+ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel  （https://packaging.python.org/en/latest/projects）
+python-devel
 
 Python模块常用的几种安装方式（http://blog.163.com/yang_jianli/blog/static/161990006201162152724339/）
 
