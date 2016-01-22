@@ -1,8 +1,24 @@
-ez_setup.py    python-setuptools  easy_install   pip  egg文件 wheel（https://packaging.python.org/en/latest/projects）
+ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel（https://packaging.python.org/en/latest/projects）
 
+ez_setup.py
+The recommended way to bootstrap setuptools on any system is to download ez_setup.py and run it using the target Python environment
+Most Linux distributions come with wget.
+Download ez_setup.py and run it using the target Python version. The script will download the appropriate version and install it for you:
+> wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+(
+Note that on some older systems (noted on Debian 6 and CentOS 5 installations),wget may refuse to download ez_setup.py
+> wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
+> python ez_setup.py --insecure
+)
+只需要一个大约 8K 作为的脚本ez_setup.py，就能自动为用户安装包括 setuptools 自身在内的许多 Python 包。 
+使用这种方式，用户只需要下载 ez_setup。py 并运行，就可以自动下载和安装适合用户当前 Python 版本的适当的
+setuptools egg 文件。此外，这段脚本还会将可执行的 easy_install 脚本安装到用户所有的操作系统 Python 可执行脚本正常应该安装的位置
+
+easy_install
 easy_install was released in 2004, as part of setuptools. 
 It was notable at the time for installing packages from PyPI using requirement specifiers, and automatically installing dependencies.
 
+pip
 pip came later in 2008, as alternative to easy_install, although still largely built on top of setuptools components. 
 It was notable at the time for not installing packages as Eggs or from Eggs (but rather simply as ‘flat’ packages from sdists), 
 and introducing the idea of Requirements Files, which gave users the power to easily replicate environments.
