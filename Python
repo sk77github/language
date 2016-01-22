@@ -2,6 +2,73 @@ ez_setup.py    python-setuptools    easy_install     pip    egg文件   wheel（
 
 Python模块常用的几种安装方式（http://blog.163.com/yang_jianli/blog/static/161990006201162152724339/）
 
+一、方法1： 单文件模块
+直接把文件拷贝到 $python_dir/Lib
+
+二、方法2： 多文件模块，带setup.py
+下载模块包，进行解压，进入模块文件夹，执行：
+python setup.py install
+
+三、 方法3：easy_install 方式
+ 先下载ez_setup.py,运行python ez_setup 进行easy_install工具的安装，之后就可以使用easy_install进行安装package了。
+  easy_install  packageName
+  easy_install  package.egg
+
+四、 方法4：pip 方式 
+先进行pip工具的安裝：easy_install pip（pip 可以通过easy_install 安裝，而且也会装到 Scripts 文件夹下。）
+安裝：pip install PackageName
+更新：pip install -U PackageName
+移除：pip uninstall PackageName
+搜索：pip search PackageName
+帮助：pip help
+
+注：虽然Python的模块可以拷贝安装，但是一般情况下推荐制作一个安装包，即写一个setup.py文件来安装。
+setup.py文件的使用如下:
+% python setup.py build     #编译
+% python setup.py install    #安装
+% python setup.py sdist      #制作分发包
+% python setup.py bdist_wininst    #制作windows下的分发包
+% python setup.py bdist_rpm
+
+setup.py文件的编写
+setup.py中主要执行一个 setup函数，该函数中大部分是描述性东西，最主要的是packages参数，列出所有的package，
+可以用自带的find_packages来动态获取package。所以setup.py文件的编写实际是很简单的。
+简单的例子:
+setup.py文件：
+
+ from setuptools import setup, find_packages
+setup(
+       name = " mytest " ,
+       version = " 0.10 " ,
+       description = " My test module " ,
+       author = " Robin Hood " ,
+       url = " http://www.csdn.net " ,
+       license = " LGPL " ,
+       packages = find_packages(),
+       scripts = [ " scripts/test.py " ],
+       )
+
+mytest.py
+
+import sys
+def get():
+     return sys.path
+
+scripts/test.py
+
+import os
+print os.environ.keys() 
+
+setup中的scripts表示将该文件放到 Python的Scripts目录下，可以直接用。OK，简单的安装成功，可以运行所列举的命令生成安装包，
+或者安装该python包。
+
+
+
+
+
+
+
+
 ez_setup.py
 The recommended way to bootstrap setuptools on any system is to download ez_setup.py and run it using the target Python environment
 Most Linux distributions come with wget.
