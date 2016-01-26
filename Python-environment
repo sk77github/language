@@ -40,7 +40,7 @@ Finally, create a link to Python 3 executable for easy usage:
 And check:
 # python3 --version 
 Python 3.3.2
-ln -s /usr/local/bin/pip3.4 /usr/bin/pip3  //将pip也链接好 方便使用
+#ln -s /usr/local/bin/pip3.4 /usr/bin/pip3  //将pip也链接好 方便使用
 
 如果是Python2没有自带安装pip，需要再次安装pip
 # wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
