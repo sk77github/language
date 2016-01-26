@@ -191,3 +191,13 @@ Python包列表：
 https://pypi.python.org/pypi?%3Aaction=index
 
 sql-to-graphite 0.0.6	                A tool to send SQL results to Graphite
+
+
+
+
+
+
+python的版本兼容问题
+比如说graphite的setup.py脚本中第四行还是import ConfigParser
+ The ConfigParser module has been renamed to configparser in Python 3. 
+ The 2to3 tool will automatically adapt imports when converting your sources to Python 3.
