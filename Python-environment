@@ -24,6 +24,7 @@ As we're going to compile python3, we need to install the required development p
 Download Python 3.4 sources and compile / install them :
 # cd /usr/local/src
 # wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz --no-check-certificate
+#https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tar.xz
 # tar xf Python-3.4.3.tar.xz
 # cd Python-3.4.3
 # ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
