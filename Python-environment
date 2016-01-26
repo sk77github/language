@@ -29,6 +29,7 @@ Download Python 3.4 sources and compile / install them :
 if you don't want to overwrite the python executable (safer, at least on some distros yum needs python to be 2.x, such as for RHEL6)
 - you can install python3.* as a concurrent instance to the system default with an altinstall:
 )
+2.7.9版本之后，Python自带安装pip和setuptools
 # /usr/local/bin/python3.4 --version
 
 Finally, create a link to Python 3 executable for easy usage:
@@ -36,14 +37,6 @@ Finally, create a link to Python 3 executable for easy usage:
 And check:
 # python3 --version 
 Python 3.3.2
-
-Now download and install Setuptools + pip:
-# cd /usr/local/src
-# wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
-# python3 ez_setup.py
-# /usr/local/bin/easy_install-3.4 pip
-
-
 
 
 
