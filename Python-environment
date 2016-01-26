@@ -17,6 +17,8 @@ As we're going to compile python3, we need to install the required development p
 # yum groupinstall "Development tools"
 # yum install zlib-devel bzip2-devel openssl-devel ncurses-devel zx-devel \
       sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel
+以上这些必要的基础依赖，在以后其他组件的安装及使用过程中需要用到，所以要提前装好
+对于基础依赖，要有个共识印象
       
 Download Python 3.4 sources and compile / install them :
 # cd /usr/local/src
