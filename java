@@ -24,3 +24,12 @@ java -version                                       查看当前jdk版本
 update-alternatives --config java                   查看系统上已安装多少个java版本
 update-alternatives是linux系统中专门维护系统命令链接符的工具，通过它可以很方便的设置系统默认使用哪个命令、哪个软件版本，比如，我们在系统中
 同时安装了open jdk和sun jdk两个版本，而我们又希望系统默认使用的是sun jdk，就可以通过update-alternatives --config java 进行指定
+
+
+
+
+————————————————————————————————————————————————————————————————————————————————————————————————————
+在没有java环境的机器上，使用rpm方式，安装jdk1.7
+
+下载
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm"
