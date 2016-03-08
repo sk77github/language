@@ -31,6 +31,32 @@ JAVA_HOME
 CLASSPATH
 PATH
 
+1. PATH环境变量。作用是指定命令搜索路径，在shell下面执行命令时，它会到PATH变量所指定的路径中查找看是否能找到相应的命令程序。
+我们需要把 jdk安装目录下的bin目录增加到现有的PATH变量中，bin目录中包含经常要用到的可执行文件如javac/java/javadoc等待，
+设置好 PATH变量后，就可以在任何目录下执行javac/java等工具了。 
+2. CLASSPATH环境变量。作用是指定类搜索路径，要使用已经编写好的类，前提当然是能够找到它们了，JVM就是通过CLASSPTH来寻找类的。
+我们 需要把jdk安装目录下的lib子目录中的dt.jar和tools.jar设置到CLASSPATH中，当然，当前目录“.”也必须加入到该变量中。 
+3. JAVA_HOME环境变量。它指向jdk的安装目录，Eclipse/NetBeans/Tomcat等软件就是通过搜索JAVA_HOME变量来找到并使用安装好的jdk。 
+
+三. 三种配置环境变量的方法1. 修改/etc/profile文件 
+如果你的计算机仅仅作为开发使用时推荐使用这种方法，因为所有用户的shell都有权使用这些环境变量，可能会给系统带来安全性问题。 
+·用文本编辑器打开/etc/profile 
+·在profile文件末尾加入： 
+export JAVA_HOME=/usr/share/jdk1.6.0_14 
+export PATH=$JAVA_HOME/bin:$PATH 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
+
+·重新登录 
+·注解 
+a. 你要将 /usr/share/jdk1.6.0_14改为你的jdk安装目录 
+b. linux下用冒号“:”来分隔路径 
+c. $PATH / $CLASSPATH / $JAVA_HOME 是用来引用原来的环境变量的值 
+在设置环境变量时特别要注意不能把原来的值给覆盖掉了，这是一种 
+常见的错误。 
+d. CLASSPATH中当前目录“.”不能丢,把当前目录丢掉也是常见的错误。 
+e. export是把这三个变量导出为全局变量。 
+f. 大小写必须严格区分。 
+
 
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 在没有java环境的机器上，使用rpm方式，安装jdk1.7
