@@ -33,3 +33,6 @@ update-alternatives是linux系统中专门维护系统命令链接符的工具�
 
 下载
 wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm"
+安装
+rpm -ivh jdk-7u79-linux-x64.rpm 
+此种方式安装，会将/usr/bin目录下的相关链接做好  比如/usr/bin/java链接到jdk安装目录下的响应可执行文件上
