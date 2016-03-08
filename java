@@ -1,4 +1,4 @@
-java安装方式（推荐用rpm方式）：
+java安装方式（推荐用rpm方式，安装时如果不需要其他版本，可以先rpm -e将其他版本删除）：
 Manual 解压二进制包
 rpm方式
 Distribution repository  yum方式  一般OpenJDK都是此种方式
