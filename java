@@ -11,7 +11,13 @@ rpm -qa | grep jdk
 
 删除java：
 rpm方式安装 可用  rpm -e  包名（rpm -qa | grep java 及 rpm -qa | grep java 的输出）
+Self-extracting file uninstall
 手动解压二进制包安装  可直接删除jdk目录（其他如java二进制执行文件可能还需要手动删除，如/usr/bin/java)
+Find out if Java is installed in some folder. Common locations are /usr/java/jre_<version> or /opt/jre_nb/jre_<version>/bin/java/
+When you have located the folder, you may delete folder. 
+Warning: You should be certain that Java is not already installed using RPM before removing the folder.
+Type: rm -r jre<version>
+For example: rm -r jre1.6.0
 
 
 java -version                                       查看当前jdk版本
