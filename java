@@ -39,7 +39,10 @@ PATH
 wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm"
 安装
 rpm -ivh jdk-7u79-linux-x64.rpm 
-此种方式安装，会将/usr/bin目录下的相关链接做好  比如/usr/bin/java链接到jdk安装目录下的响应可执行文件上
+此种方式安装，会将/usr/bin目录下的相关链接做好  比如/usr/bin/java链接到jdk安装目录下的响应可执行文件上（如果原来是手动解压安装的呢？
+此时/usr/bin/java下已链接到手动安装的目录，此时/usr/bin/java的指向还是原来的指向，并不会被更改，如果想要使刚刚rpm的方式安装生效，
+则需要改变/usr/bin/java的指向，要么手动改变，要么使用update-alternatives（亲测，update-alternatives --config java 并没有输出刚刚rpm
+安装的选项，还是只输出了原来手动安装的选项）
 
 使用ansible，在集群中批量安装
 ansible all -m copy -a "src=/root/jdk-7u79-linux-x64.rpm dest=/root" 
