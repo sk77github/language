@@ -45,8 +45,8 @@ Python 3.3.2
 
 如果是Python2没有自带安装pip，需要再次安装pip
 # wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
-# /usr/local/bin/python3.4 ez_setup.py
-# /usr/local/bin/easy_install-3.4 pip
+# /usr/local/bin/python3.4 ez_setup.py   (安装setuptools)
+# /usr/local/bin/easy_install-3.4 pip    （安装pip）
 
 
 
