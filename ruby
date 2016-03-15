@@ -63,4 +63,15 @@ Installation of RVM in /usr/local/rvm/ is almost complete:
 rvm使用----------------------------------------------------------------------------------------------
 
 rvm list known       列出已知的ruby版本
-rvm install 1.9.3    安装1.9.3版本的ruby
+修改rvm源为淘宝
+sed -i -E 's!https?://cache.ruby-lang.org/pub/ruby!https://ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
+安装1.9.3版本的ruby，ruby 1.9.2版本以上已经装有gem
+rvm install 1.9.3    
+
+
+gem-----------------------------------------------------------------------------------------------------------------------
+
+更换为淘宝源
+gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/ 
+查看确保只有淘宝源
+gem sources -l
