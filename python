@@ -212,3 +212,21 @@ python的版本兼容问题
  The 2to3 tool will automatically adapt imports when converting your sources to Python 3.
  /usr/local/bin/2to3-3.4 setup.py //对比并打印出在Python2和Python3下 setup.py的代码不同之处
  /usr/local/bin/2to3-3.4 -w setup.py //将Python2版本代码修改成Python版本代码，并将源文件备份
+ 
+ 
+ -----------------------------------------------------------------------------------------------------------------------
+ virtualenv:
+ 
+ pip安装：
+ pip install virtualenv 
+ 
+ which virtualenv
+ /usr/local/bin/virtualenv
+ 
+ 创建虚拟环境
+virtualenv cabot
+Using base prefix '/usr/local'
+New python executable in /data/server/alter/cabot/bin/python3.4
+Also creating executable in /data/server/alter/cabot/bin/python
+Installing setuptools, pip, wheel...done.
+ 
