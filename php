@@ -10,3 +10,9 @@ rpm -ql php   查看安装分布
 
 配置时区：
 date.timezone = Asia/Shanghai
+
+
+
+
+安装数学计算扩展：
+yum install php-bcmath
