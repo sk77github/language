@@ -13,7 +13,7 @@ export PATH=$PATH:/usr/local/go/bin
 设置GOPATH
 //VIM START
 vim .bashrc 
-export GOPATH=$HOME/gowork
+export GOPATH=$HOME/gowork(某个目录)
 //VIM END
 
 test for install
