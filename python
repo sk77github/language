@@ -11,7 +11,9 @@ You may already have Python installed on your server, you can verify using:
 /usr/bin/python 
 # python --version 
 Python 2.6.6
-For this install we want to leave existing Python packages and executables in place. 
+For this install we want to leave existing Python packages and executables in place.
+
+--------------------------------------------------
 
 As we're going to compile python3, we need to install the required development packages:
 # yum groupinstall "Development tools"
@@ -48,6 +50,7 @@ Python 3.3.2
 # /usr/local/bin/python3.4 ez_setup.py   (安装setuptools)
 # /usr/local/bin/easy_install-3.4 pip    （安装pip）
 
+----------------------------------------------------------------
 
 
 
