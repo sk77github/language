@@ -62,7 +62,7 @@ f. 大小写必须严格区分。
 在没有java环境的机器上，使用rpm方式，安装jdk1.7
 
 下载
-wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm"
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm(这里可换成对应版本的jdk地址，jdk地址从http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html这里获取)"
 安装
 rpm -ivh jdk-7u79-linux-x64.rpm 
 此种方式安装，会将/usr/bin目录下的相关链接做好  比如/usr/bin/java链接到jdk安装目录下的响应可执行文件上（如果原来是手动解压安装的呢？
