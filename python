@@ -240,7 +240,9 @@ Installing setuptools, pip, wheel...done.
  
 --------------------------------------------------------------------------------------------------------------------------
 Python 解析sql：（下面的代码可直接 Python select_parser.py 运行 
-来自：http://pyparsing.wikispaces.com/file/view/select_parser.py/158651233/select_parser.py）
+来自：http://pyparsing.wikispaces.com/file/view/select_parser.py/158651233/select_parser.py
+支持语法 http://www.sqlite.org/lang_select.html   暂时还不支持 and or 等表达式
+）
 
 # select_parser.py
 # Copyright 2010, Paul McGuire
