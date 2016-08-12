@@ -363,3 +363,60 @@ for t in tests:
     
 解析sql end
 ----------------------------------------------------------------------------------------------------------------
+语音参考：
+
+print type(age)    输出变量类型
+age = int(age)     类型转换
+
+字母转数字，数字转字母：
+ord('A')
+65
+>>> chr(65)
+'A'
+>>> print u'中文'
+中文
+
+u'中'和u'\u4e2d'是一样的，\u后面是十六进制的Unicode码。因此，u'A'和u'\u0041'也是一样的。
+
+
+字符串长度
+len(a)
+
+字符串里面的%是一个普通字符怎么办？这个时候就需要转义，用%%来表示一个%
+
+list和tuple：
+list常用操作：
+list_a = ['b','c','d']  初始化
+list_a.append('e')      b,c,d,e 追加
+list_a.insert(0,'a')  a,b,c,d,e 任一下标插入
+list_a.pop()            a,b,c,d 出队列
+list_a.pop(2)           a,d,d   任一下标删除
+list_a[0] = 'c'         c,b,d   任一位置赋值
+print list_a
+tuple“指向不变”，要创建一个内容也不变的tuple怎么做？那就必须保证tuple的每一个元素本身也不能变。
+
+range()  序列生产器   在循环时非常有用
+
+dict（字典）：
+
+dict_a = {"a":0,"b":1,"c":2}
+dict_a['d'] = 3
+print dict_a       
+value = dict_a.get('d',0)
+print value       输出3
+value = dict_a.get('e',0)
+print value       输出0，因为e不存在，后面的参数又定义了不存在时输出0 
+dict_a.pop('b')   将b这个key=>value从字典中删除
+for values in dict_a:
+    print alues
+       
+dict内部存放的顺序和key放入的顺序是没有关系的。
+和list比，dict有以下几个特点：
+
+dict查找和插入的速度极快，不会随着key的增加而增加；
+需要占用大量的内存，内存浪费多。
+
+而list相反：
+查找和插入的时间随着元素的增加而增加；
+占用空间小，浪费内存很少。
+所以，dict是用空间来换取时间的一种方法。
