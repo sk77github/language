@@ -468,5 +468,33 @@ print l[10:99:10]
 在很多编程语言中，针对字符串提供了很多各种截取函数，其实目的就是对字符串切片。
 Python没有针对字符串的截取函数，只需要切片一个操作就可以完成
 
-迭代：
 
+迭代：
+d = {'a':1,'b':2,'c':3,'d':4}
+
+for key in d.iterkeys():
+    print key      输出 a,b,c,d
+for value in d.itervalues():
+    print value    输出 1,2,3,4
+for k,v in d.iteritems():
+    print "key=",k,"value=",v    输出 key= a value= 1 等
+
+isinstance([1,2,3], Iterable)   判断是否可迭代 输出True
+
+转换成索引-元素迭代：
+for i, value in enumerate(['a','b','c']):
+    print i, value    输出0,a 1,b 2,c
+    
+列表生成式：
+print [k*k*k for k in range(1,5) if k % 2 != 0]   输出[1, 27]
+print [m + n for m in 'ABC' for n in 'abc']   输出：
+['Aa', 'Ab', 'Ac', 'Ba', 'Bb', 'Bc', 'Ca', 'Cb', 'Cc']
+
+生成器：
+在Python中，一边循环一边计算的机制，称为生成器（Generator）
+generator的工作原理，它是在for循环的过程中不断计算出下一个元素，并在适当的条件结束for循环。
+对于函数改成的generator来说，遇到return语句或者执行到函数体最后一行语句，就是结束generator的指令，for循环随之结束。
+
+---------------------------------------------------------------------------------
+
+Python函数式编程：
