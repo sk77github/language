@@ -532,3 +532,8 @@ conda --version
 conda create --name stock pandas
 激活环境：
 source activate stock
+查看环境：
+which python（显示形如：/root/anaconda3/envs/stock/bin/python
+ls /root/anaconda3/envs/stock/  显示：
+bin  conda-meta  include  lib  share  ssl
+）
