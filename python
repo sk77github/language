@@ -539,3 +539,5 @@ bin  conda-meta  include  lib  share  ssl
 ）
 查看环境下的包：
 conda list
+安装包：
+conda install --name stock（环境名） lxml（包名）
