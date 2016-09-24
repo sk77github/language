@@ -537,3 +537,5 @@ which python（显示形如：/root/anaconda3/envs/stock/bin/python
 ls /root/anaconda3/envs/stock/  显示：
 bin  conda-meta  include  lib  share  ssl
 ）
+查看环境下的包：
+conda list
