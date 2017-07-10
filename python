@@ -529,14 +529,27 @@ bash Anaconda3-4.1.1-Linux-x86_64.sh
 安装验证：
 conda --version
 创建环境：
-conda create --name stock pandas
-激活环境：
-source activate stock
-查看环境：
+# 指定python版本为2.7，注意至少需要指定python版本或者要安装的包# 后一种情况下，自动安装最新python版本
+conda create -n env_name python=2.7
+# 同时安装必要的包
+conda create -n env_name numpy matplotlib python=2.7
+conda create --name stock pandas（安装最新python版本）
+
+切换环境：
+source activate env_name（例如：source activate stock）
+#退出环境，也可以使用`activate root`切回root环境
+deactivate env_name
+移除环境
+conda remove -n env_name --all
+
+列出环境
+conda info -e
 which python（显示形如：/root/anaconda3/envs/stock/bin/python
 ls /root/anaconda3/envs/stock/  显示：
 bin  conda-meta  include  lib  share  ssl
 ）
+
+包管理
 查看环境下的包：
 conda list
 安装包：
