@@ -1,4 +1,7 @@
-扩展：
+扩展模块：
+
+查看所有php扩展模块：
+yum search all php
 
 安装php连接mysql扩展：
 yum install php-mysql
@@ -16,6 +19,29 @@ date.timezone = Asia/Shanghai
 
 安装数学计算扩展：
 yum install php-bcmath
+--------------------------------------------------------------------------------------------------------
+yum安装服务器：
+
+Step 1: Installing Remi Repository
+yum update
+yum install epel-release
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
+Step 2: Enabling the Remi Repository
+vim /etc/yum.repos.d/remi.repo
+    [remi]项下
+     enabled=1
+    [remi-php55]项下（如果安装php5.5）
+     enabled=1
+     
+Step 3: Installing Apache, and PHP  
+yum --enablerepo=remi install httpd  php php-common
+yum --enablerepo=remi install php-pdo php-gd php-xml php-mbstring php-mcrypt php-pecl-apcu php-cli php-pear
+
+Step 5: Enable/Start Apache
+systemctl enable httpd
+systemctl start httpd
+
 
 
 
