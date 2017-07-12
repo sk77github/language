@@ -36,7 +36,7 @@ vim /etc/yum.repos.d/remi.repo
      
 Step 3: Installing Apache, and PHP  
 yum --enablerepo=remi install httpd  php php-common
-yum --enablerepo=remi install php-pdo php-gd php-xml php-mbstring php-mcrypt php-pecl-apcu php-cli php-pear
+yum --enablerepo=remi install php-pdo php-mysql php-gd php-xml php-mbstring php-mcrypt php-pecl-apcu php-cli php-pear
 
 Step 5: Enable/Start Apache
 systemctl enable httpd
