@@ -565,3 +565,9 @@ conda update numpy
 conda update anaconda
 卸载包
 conda remove numpy
+
+
+------------------------------------------------------------------------------------------------------
+numpy
+
+
