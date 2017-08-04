@@ -14,6 +14,17 @@ rpm -ql php   查看安装分布
 配置时区：
 date.timezone = Asia/Shanghai
 
+----------------------------------------------------------------------------------------------------
+扩展安装，以ssh2为例：
+安装支持库文件
+1，yum install  php-devel php-pear libssh2 libssh2-devel -y
+安装SSH2扩展
+2，pecl install -f ssh2
+修改ssh2.ini
+3，vim /etc/php.d/ssh2.ini
+检查SSH2是否安装成功
+4，php -m | grep ssh2 
+5，php -i|grep ssh2   
 
 
 好用扩展：
