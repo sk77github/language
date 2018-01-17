@@ -36,6 +36,7 @@ func main() {
 }
 //VIM END
 go install hello (类编译的那么一个过程，会在workspace的bin目录里生成可执行文件)
+go clean remove the bin file from workspace/bin
 运行 bin/hello 输出hello，world 验证安装正确
 （注意PATH  GOPATH GOROOT 这三者的概念 以及go的workspace的概念）
 
