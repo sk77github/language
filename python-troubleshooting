@@ -1,0 +1,18 @@
+Q:UnicodeDecodeError: 'utf8' codec can't decode byte 0xa5 in position 0: invalid start byte:?
+
+A:
+Your string has a non ascii character encoded in it.
+
+Not being able to decode with utf-8 may happen if you've needed to use other encodings in your code. For example:
+
+>>> 'my weird character \x96'.decode('utf-8')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0x96 in position 19: invalid start byte
+In this case, the encoding is windows-1252 so you have to do:
+
+>>> 'my weird character \x96'.decode('windows-1252')
+u'my weird character \u2013'
+Now that you have unicode, you can safely encode into utf-8.
