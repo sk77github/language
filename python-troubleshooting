@@ -1,4 +1,4 @@
-Q:UnicodeDecodeError: 'utf8' codec can't decode byte 0xa5 in position 0: invalid start byte:?
+Q:in python2.7,UnicodeDecodeError: 'utf8' codec can't decode byte 0xa5 in position 0: invalid start byte:?
 
 A:
 Your string has a non ascii character encoded in it.
