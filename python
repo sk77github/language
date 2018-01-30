@@ -1,3 +1,11 @@
+编码：
+string is a sequence of characters, ie unicode codepoints; these are an abstract concept, and can't be directly stored on disk.
+.encode() method of a string to get byte string
+byte string is a sequence of, unsurprisingly, bytes - things that can be stored on disk
+.decode() method of the byte string to get string
+ 
+
+
 Install Python 3.x in CentOS / RedHat 6.x from sources
 http://www.sromero.org/wiki/linux/aplicaciones/python/python34_centos6
 
