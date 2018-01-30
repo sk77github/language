@@ -1,9 +1,11 @@
+
 编码：
 string is a sequence of characters, ie unicode codepoints; these are an abstract concept, and can't be directly stored on disk.
 .encode() method of a string to get byte string
 byte string is a sequence of, unsurprisingly, bytes - things that can be stored on disk
 .decode() method of the byte string to get string
- 
+程序一般统一用unicode，而不同存储介质可以有自己的选择，比如gbk，utf8
+一个重要的技巧，解铃还需系铃人，在你知道编码的最源头，就用相适配的编码进行编解码，一旦编解开，之后就可以一路编解了
 
 
 Install Python 3.x in CentOS / RedHat 6.x from sources
