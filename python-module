@@ -13,5 +13,8 @@ and you warning or error log can send mail to developer， so you can fix it in 
 A good convention to use when naming loggers is to use a module-level logger, in each module which uses logging, named as follows:
 logger = logging.getLogger(__name__)
 
+you can create a log config file and read it use fileconfig() function
+
+
 API：
 http://python.jobbole.com/85279/
