@@ -5,3 +5,6 @@ logger:提供了应用接口，供程序使用
 handlers:用来将logger创建的log 发送到相应的目的地
 filter:为要输出的日志提供了更细粒度的设置
 formatters:设置最终的输出格式
+
+API：
+http://python.jobbole.com/85279/
