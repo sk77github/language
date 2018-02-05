@@ -6,5 +6,9 @@ handlers:用来将logger创建的log 发送到相应的目的地
 filter:为要输出的日志提供了更细粒度的设置
 formatters:设置最终的输出格式
 
+logger objects pass along relevant log messages to all interested log handlers. logger can have more than one handler，so the application
+can send log messages to the different target，like，console，file，email and so on。for example，you normal log can send to timerotatingfile
+and you warning or error log can send mail to developer， so you can fix it in the first time。
+
 API：
 http://python.jobbole.com/85279/
