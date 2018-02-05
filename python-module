@@ -10,5 +10,8 @@ logger objects pass along relevant log messages to all interested log handlers. 
 can send log messages to the different target，like，console，file，email and so on。for example，you normal log can send to timerotatingfile
 and you warning or error log can send mail to developer， so you can fix it in the first time。
 
+A good convention to use when naming loggers is to use a module-level logger, in each module which uses logging, named as follows:
+logger = logging.getLogger(__name__)
+
 API：
 http://python.jobbole.com/85279/
