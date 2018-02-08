@@ -16,3 +16,24 @@ In this case, the encoding is windows-1252 so you have to do:
 >>> 'my weird character \x96'.decode('windows-1252')
 u'my weird character \u2013'
 Now that you have unicode, you can safely encode into utf-8.
+
+
+
+
+python脚本crontab执行的几个坑。
+坑一：
+
+一般linux都预安装python，但是版本比较低。会出现python程序手工执行正常，但是用crontab执行报错，如缺少某某模块之类的。
+
+最直接的解决办法：使用新版本python的绝对路径执行，如：
+
+0 14 * * * /usr/local/bin/python2.7 /xxx.py > /yyy.log 2>&1 &
+
+坑二：
+
+如果python程序内使用到一些涉及环境变量的方法可能差异，如：
+
+cfg = ConfigParser.ConfigParser()
+cfg.read(r'/home/work/open-falcon/addin/sms.ini')
+
+这里如果采用相对路径./sms.ini亦会导致无法正常读取。
