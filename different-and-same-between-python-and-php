@@ -6,5 +6,5 @@ in php, when you send a array's name,it's send the array's value
 
 
 the same:
-they both have the same features __call(in php),__call__(in python),it's mean when you call a function that the class didn't have,the
+they both have the same features __call(in php),__call__(in python),it's mean when you call a method that the class didn't have,the
 language will auto call the function __call(or __call__),which you define it in the class
