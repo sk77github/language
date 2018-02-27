@@ -37,4 +37,4 @@ and address is the address bound to the socket on the other end of the connectio
 so a python client-server program total have three socket object ,one in server, other in client, they all created in init，and the
 third one is connection，which returned by the server‘s socket accept method（like sock, addr = socket.accept(),so this sock is that
 connection）
-注意，accept针对客户端的connect方法
+注意，accept()针对客户端的connect()方法，相应的recv()针对send()方法
