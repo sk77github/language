@@ -1,0 +1,1 @@
+-u argument don't buffer stdout and stderr data ，direct print
