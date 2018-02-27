@@ -25,3 +25,15 @@ date & time module:
 
 arrow
 http://arrow.readthedocs.io/en/latest/
+
+-------------------------------------------------------------------------------------------------------------------------
+socket moudle
+
+socket.accept()
+Accept a connection. The socket must be bound to an address and listening for connections. 
+The return value is a pair (conn, address) where conn is a new socket object usable to send and receive data on the connection,
+and address is the address bound to the socket on the other end of the connection.
+
+so a python client-server program total have three socket object ,one in server, other in client, they all created in init，and the
+third one is connection，which returned by the server‘s socket accept method（like sock, addr = socket.accept(),so this sock is that
+connection）
