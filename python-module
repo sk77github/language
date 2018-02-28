@@ -75,5 +75,7 @@ test2 helloworld
 test1 ({'ppp': 6, 'mmm': 7, 'kkk': 5}, [1, 2, 3]) #here2
 None
 
-greenlet是知道你在here处，在switch到gr2之前是赋值操作的（也就时挂起前的程序，其实也就时所谓的上下文），所以在here1处当switch到gr1时，虽然带了两个参数，一个字典，一个列表，但greenlet把它们合成
-了元组赋值给了z，故有here2处的打印输出内容
+greenlet是知道你在here处，在switch到gr2之前是赋值操作的（也就是挂起前的程序，其实也就时所谓的上下文，也就是下文描述的二叉树的一个子树，假设为左树），
+所以在here1处当switch到gr1时，虽然带了两个参数，一个字典，一个列表，但greenlet把它们合成了元组赋值给了z（此处因为here1处没有return，故回到here处
+时继续向下执行了左树。如果有return就会在父节点退出，而不会有here2处的打印），故有here2处的打印输出内容。另外switch不是赋值，而是一个二叉树式的选择，
+且换到了另一个棵子树
