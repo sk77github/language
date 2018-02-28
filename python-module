@@ -45,3 +45,35 @@ connection）
 gevent moudle
 
 gevent是目前应用非常广泛的网络库，高效的轮询IO库libev加上greenlet实现的协程（coroutine）
+
+
+
+
+--------------------------------------------------------------------------------------------------
+greenlet
+
+generator实现的协程在yield value时只能将value返回给调用者(caller)。 而在greenlet中，target.switch（value）可以切换到指定的协程（target），
+然后yield value。greenlet用switch来表示协程的切换，从一个协程切换到另一个协程需要显式指定。
+
+在switch之前，greenlet是知道你在switch之前做的是什么操作的，比如下列程序：
+from greenlet import greenlet
+
+def test1(x, y):
+    z = gr2.switch(x + y)    #here
+    print("test1" , z)
+
+def test2(u):
+    print("test2", u)
+    gr1.switch({"kkk": 5, "ppp": 6, "mmm": 7},[1,2,3]) #here1
+
+gr1 = greenlet(test1)
+gr2 = greenlet(test2)
+print(gr1.switch("hello", "world"))
+
+输出：
+test2 helloworld
+test1 ({'ppp': 6, 'mmm': 7, 'kkk': 5}, [1, 2, 3]) #here2
+None
+
+greenlet是知道你在here处，在switch到gr2之前是赋值操作的（也就时挂起前的程序，其实也就时所谓的上下文），所以在here1处当switch到gr1时，虽然带了两个参数，一个字典，一个列表，但greenlet把它们合成
+了元组赋值给了z，故有here2处的打印输出内容
