@@ -8,6 +8,13 @@ byte string is a sequence of, unsurprisingly, bytes - things that can be stored 
 一个重要的技巧，解铃还需系铃人，在你知道编码的最源头，就用相适配的编码进行编解码，一旦编解开，之后就可以一路编解了
 
 
+协程：
+协程就是用户态下的线程，是人们在有了进程、线程之后仍觉得效率不够，而追求的又一种高并发解决方案。
+为什么说是用户态，是因为操作系统并不知道它的存在，它是由程序员自己控制、互相协作的让出控制权而不是像进程、
+线程那样由操作系统调度决定是否让出控制权。
+http://python.jobbole.com/85438/
+
+
 Install Python 3.x in CentOS / RedHat 6.x from sources
 http://www.sromero.org/wiki/linux/aplicaciones/python/python34_centos6
 
