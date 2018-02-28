@@ -38,3 +38,10 @@ so a python client-server program total have three socket object ,one in server,
 third one is connection，which returned by the server‘s socket accept method（like sock, addr = socket.accept(),so this sock is that
 connection）
 注意，accept()针对客户端的connect()方法，相应的recv()针对send()方法
+
+
+
+------------------------------------------------------------------------------------------------
+gevent moudle
+
+gevent是目前应用非常广泛的网络库，高效的轮询IO库libev加上greenlet实现的协程（coroutine）
