@@ -79,3 +79,15 @@ greenlet是知道你在here处，在switch到gr2之前是赋值操作的（也�
 所以在here1处当switch到gr1时，虽然带了两个参数，一个字典，一个列表，但greenlet把它们合成了元组赋值给了z（此处因为here1处没有return，故回到here处
 时继续向下执行了左树。如果有return就会在父节点退出，而不会有here2处的打印），故有here2处的打印输出内容。另外switch不是赋值，而是一个二叉树式的选择，
 且换到了另一个棵子树。默认的子树parent取决于greenlet创建子树时的环境。如上列，左子树gr1，右子树gr2，属于parent “main greenlet”
+
+使用greenlet需要注意以下三点：
+第一：greenlet创生之后，一定要结束，不能switch出去就不回来了，否则容易造成内存泄露。
+第二：python中每个线程都有自己的main greenlet及其对应的sub-greenlet ，不能线程之间的greenlet是不能相互切换的。（协程基于线程）
+第三：不能存在循环引用，这个是官方文档明确说明。
+
+对于异步非阻塞，而且还需要保留上下文的场景，greenlet也就时协程非常适用。greenlet很强大，可以从一个协程切换到任意其他协程，这是generator做不到的，
+但这种能力其实也是双刃剑，前面的注意事项也提到了，必须保证greenlet的正常结束，在协程之间任意的切换很容易出问题。比如对于服务之间异步请求的例子，
+简化为服务A的一个函数foo需要异步访问服务B，可以这样封装greenlet：用decorator装饰函数foo，当调用这个foo的时候建立一个greenlet实例，
+并为这个greenlet对应一个唯一的gid，在foo方法发出异步请求（写到gid）之后，switch到parent，这个时候这个新的协程处于挂起状态。当请求返回之后，
+通过gid找到之前被挂起的协程，恢复该协程即可。More simple More safety，保证旨在main和一级子协程之间切换。需要注意的是处理各种异常 以及请求超时的情况
+，避免内存泄露，gevent对greenlet的使用大致也是这样的。
