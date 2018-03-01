@@ -1,9 +1,41 @@
+WSGI协议其实是定义了一种server与application解耦的规范，即可以有多个实现WSGI server的服务器，也可以有多个实现WSGI application的框架,
+那么就可以选择任意的server和application组合实现自己的web应用。
+例如uWSGI和Gunicorn都是实现了WSGI server协议的服务器，
+Django，Flask是实现了WSGI application协议的web框架，可以根据项目实际情况搭配使用。
+像Django，Flask框架都有自己实现的简单的WSGI server，一般用于服务器调试，生产环境下建议用其他WSGI server。
+
+首先弄清下面几个概念：
+WSGI：全称是Web Server Gateway Interface，只是一种规范，描述web server如何与web application通信的规范。要实现WSGI协议，
+必须同时实现web server和web application，当前运行在WSGI协议之上的web框架有Bottle, Flask, Django。
+uwsgi：与WSGI一样是一种通信协议，是uWSGI服务器的独占协议
+uWSGI：是一个web服务器，实现了WSGI协议、uwsgi协议、http协议等。
+
+WSGI协议主要包括server和application两部分：
+WSGI server负责从客户端接收请求，将request转发给application，将application返回的response返回给客户端；
+WSGI application接收由server转发的request，处理请求，并将处理结果返回给server。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 flask 四种wsgi方式对比（tornado，Gunicorn，Twisted，Gevent）
 
 Tornado
+纯python的tornado，tornado应该是最简单的基于epoll（或kqueue）的httpserver和httpclient，说白了就是封装了python标准库的socket和select.epoll
 
 Twisted
 
 Gevent
+gevent的特点是自己搞了个socket和select，通过monkey_patch的方法干掉了python自带的socket和select，从最底层就开始玩epoll，
+用gevent做聊天室，不用像tornado那样还需写回调函数或yield，只需要调用gevent.event的wait和set方法。
 
 Gunicorn
