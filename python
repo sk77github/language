@@ -1,3 +1,6 @@
+闭包：
+
+
 
 编码：
 string is a sequence of characters, ie unicode codepoints; these are an abstract concept, and can't be directly stored on disk.
