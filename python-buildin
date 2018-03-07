@@ -1,3 +1,25 @@
+举个例子如下，解释器可以这么运作。首先在内存中地址为XXXX的地方存了一个变量1，然后运行到a=1时，发现整数1要赋值给变量a，
+所以解释器就知道了啊哈变量a是整型，然后a其实保存的是地址XXXX。
+然后运行到a=0.1，解释执行器在内存中地址为YYYY的地方存了0.1，然后知道了啊哈a是浮点类型，然后a保存的地址变为了YYYY。
+a=1
+a=0.1
+既然解释器每次在保存变量值(指向地址)时，都要识别值得类型并关联到变量，所以效率肯定会低一点吧。
+（如果解释执行器是这么运作的话，Python可是有不止一种解释执行器，所以也得看开发解释执行器的人的设计啦）。
+
+四、id() is() 与 ==
+id()函数非常好理解，就是求变量地址，例子如下，注意同样是值1，可能对应的地址是不同的，因为在内存为1分配地址时分配了不同地址。
+a=1
+print(id(a))#输出3543160
+了解了id()，那么is()和==的区别就好理解了。==就是看值相等不，相等就返回True。而is()就是看id相等不，相等就返回True。
+举个例子：
+a=1
+b=1.0
+a==b#True，值就是相等哦
+a is b#False，地址肯定不一样
+c=1
+a is c#True，这个应该看解释器了，如果解释器为常量1分配一样的地址就相等了，也有可能解释器特殊喜欢分配不同地址。
+
+
 id(object)
 Return the “identity” of an object. This is an integer which is guaranteed to be unique and constant for this object during its lifetime.
 Two objects with non-overlapping lifetimes may have the same id() value.
@@ -7,8 +29,8 @@ All of Python’s immutable built-in objects are hashable; mutable containers (s
 Objects which are instances of user-defined classes are hashable by default. They all compare unequal (except with themselves), 
 and their hash value is derived from their id().
 
- Set Types — set, frozenset
- 集合类型  —— 可变集合，不可变集合
+Set Types — set, frozenset
+集合类型  —— 可变集合，不可变集合
 
 A set object is an unordered collection of distinct hashable objects. Common uses include membership testing, 
 removing duplicates from a sequence, and computing mathematical operations such as intersection, union, difference, 
