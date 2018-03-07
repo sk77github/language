@@ -23,6 +23,14 @@ stripped_list = [line.strip() for line in line_list
                  if line != ""]
 
 
+The for...in clauses contain the sequences to be iterated over. The sequences do not have to be the same length, 
+because they are iterated over from left to right, not in parallel. For each element in sequence1, sequence2 is looped over 
+from the beginning. sequence3 is then looped over for each resulting pair of elements from sequence1 and sequence2.
+example:
+ mapping = {
+             order_book_id: index_code for index_code in SHENWAN_INDUSTRY_MAP
+             for order_book_id in self.get_shenwan_industry(index_code, date)
+         }
 
 闭包：
 
