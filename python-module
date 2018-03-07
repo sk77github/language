@@ -93,3 +93,21 @@ greenlet是知道你在here处，在switch到gr2之前是赋值操作的（也�
 ，避免内存泄露，gevent对greenlet的使用大致也是这样的。
 
 可以继承greenlet.greenlet，子类需要实现run方法，当调用greenlet.switch方法时会调用到这个run方法
+
+---------------------------------------------------------------------------------------------------------
+data visuali moudle
+
+seaborn	
+matplotlib
+plotly
+
+data analysis moudle
+
+scipy
+statsmodels
+TA-Lib
+
+
+
+
+
