@@ -1,3 +1,47 @@
+property()  添加钩子，向后兼容
+
+Python式的解决方式是使用property。这里是我们已经实现了的一个版本：
+class Celsius:
+    def __init__(self, temperature = 0):
+        self.temperature = temperature
+
+    def to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
+
+    def get_temperature(self):
+        print("Getting value")
+        return self._temperature
+
+    def set_temperature(self, value):
+        if value < -273:
+            raise ValueError("Temperature below -273 is not possible")
+        print("Setting value")
+        self._temperature = value
+
+    temperature = property(get_temperature,set_temperature)
+
+我们在get_temperature()和set_temperature()的内部增加了一个print()函数，用来清楚地观察它们是否正在执行。代码的最后一行，
+创建了一个property对象temperature。简单地说，property将一些代码（get_temperature和set_temperature）附加到成员属性（temperature）的访问入口。
+任何获取temperature值的代码都会自动调用get_temperature()，而不是去字典表（__dict__）中进行查找。
+同样的，任何赋给temperature值的代码也会自动调用set_temperature()。
+这是Python中一个很酷的功能。我们实际演示一下。
+>>> c = Celsius()
+Setting value
+>>> c.temperature
+Getting value
+0
+>>> c.temperature = 37
+Setting value
+>>> c.to_fahrenheit()
+Getting value
+98.60000000000001
+
+我们可以看到，通过使用property，我们在不需要客户代码做任何修改的情况下，修改了我们的类，并实现了值约束。
+因此我们的实现是向后兼容的，这样的结果，大家都很高兴。
+最后需要注意的是，实际温度值存储在私有变量_temperature中。属性temperature是一个property对象，是用来为这个私有变量提供接口的。
+
+------------------------------------------------------------------------------------------------------------------------
+
 举个例子如下，解释器可以这么运作。首先在内存中地址为XXXX的地方存了一个变量1，然后运行到a=1时，发现整数1要赋值给变量a，
 所以解释器就知道了啊哈变量a是整型，然后a其实保存的是地址XXXX。
 然后运行到a=0.1，解释执行器在内存中地址为YYYY的地方存了0.1，然后知道了啊哈a是浮点类型，然后a保存的地址变为了YYYY。
@@ -37,3 +81,4 @@ removing duplicates from a sequence, and computing mathematical operations such 
 and symmetric difference. (For other containers see the built-in dict, list, and tuple classes, and the collections module.)
 
 
+----------------------------------------------------------------------------------------------------------------------------------
