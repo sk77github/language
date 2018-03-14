@@ -5,16 +5,20 @@ https://golang.org/doc/install?download=go1.5.3.linux-amd64.tar.gz   有安装�
 安装步骤：
 wget --no-check-certificate  https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.5.3.linux-amd64.tar.gz
-设置PATH
+
+1,设置PATH
 //VIM START 
 vim /etc/profile  写入
 export PATH=$PATH:/usr/local/go/bin
 //VIM END
-设置GOPATH
+
+2,设置GOPATH
 //VIM START
 vim .bashrc 
 export GOPATH=$HOME/gowork(某个目录)
 //VIM END
+使生效  source .bashrc
+
 
 test for install
 设定GOPATH环境变量
@@ -38,9 +42,17 @@ func main() {
 go install hello (类编译的那么一个过程，会在workspace的bin目录里生成可执行文件)
 go clean remove the bin file from workspace/bin
 运行 bin/hello 输出hello，world 验证安装正确
-（注意PATH  GOPATH GOROOT 这三者的概念 以及go的workspace的概念）
+
+（注意PATH（可执行程序的路径）  GOPATH（GOPATH表示代码包所在的地址）  GOROOT(go语言安装的路径) 这三者的概念 以及go的workspace的概念）
+
+--------------------------------------------------------------------------------------------------------------------
+yum 安装
+yum install go
+goroot ：/usr/lib/golang/
+yum会自动把 /usr/bin/go 链向 /usr/lib/golang/bin/go （设定PATH）
 
 
+--------------------------------------------------------------------------------------------------------------------
 显示GO环境
 go env
 
